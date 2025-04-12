@@ -4,6 +4,7 @@ import { addExpense, editExpense, deleteExpense } from "../features/expenses/exp
 import { setSyncStatus, clearSyncQueue, loadSyncQueue } from "../features/sync/syncSlice"
 import { useToast } from "./use-toast"
 import type { RootState } from "../lib/store"
+import { setOffline, setOnline } from "../features/sync/syncSlice";
 
 export function useSyncStatus() {
   const dispatch = useDispatch()
@@ -27,6 +28,29 @@ export function useSyncStatus() {
       }
     }
   }, [dispatch, isOffline, user])
+
+
+ 
+useEffect(() => {
+  const handleOnline = () => dispatch(setOnline());
+  const handleOffline = () => dispatch(setOffline());
+
+  window.addEventListener("online", handleOnline);
+  window.addEventListener("offline", handleOffline);
+
+  // Initialize status on load
+  if (!navigator.onLine) {
+    dispatch(setOffline());
+  } else {
+    dispatch(setOnline());
+  }
+
+  return () => {
+    window.removeEventListener("online", handleOnline);
+    window.removeEventListener("offline", handleOffline);
+  };
+}, [dispatch]);
+
 
   useEffect(() => {
     if (syncStatus === "syncing" && pendingQueue.length > 0) {

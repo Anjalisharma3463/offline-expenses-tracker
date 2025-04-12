@@ -23,6 +23,12 @@ const syncSlice = createSlice({
   name: "sync",
   initialState,
   reducers: {
+    setOffline: (state) => {
+      state.isOffline = true;
+    },
+    setOnline: (state) => {
+      state.isOffline = false;
+    },
     toggleOfflineMode: (state, action: PayloadAction<boolean>) => {
       state.isOffline = action.payload
       if (!action.payload && state.pendingQueue.length > 0) {
@@ -57,7 +63,7 @@ const syncSlice = createSlice({
   },
 })
 
-export const { toggleOfflineMode, addToSyncQueue, setSyncStatus, clearSyncQueue, syncExpenses, loadSyncQueue } =
+export const { toggleOfflineMode,setOffline, setOnline, addToSyncQueue, setSyncStatus, clearSyncQueue, syncExpenses, loadSyncQueue } =
   syncSlice.actions
 
 export default syncSlice.reducer
