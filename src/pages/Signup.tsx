@@ -78,25 +78,28 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-background to-muted/30">
-      <Card className="w-full max-w-md mx-auto">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">Create an account</CardTitle>
-          <CardDescription className="text-center">
+    <div className="min-h-screen bg-gradient-to-br from-[#0f172b] via-[#1e2939] to-[#030712] flex items-center justify-center p-4  ">
+      <Card className="w-full bg-white/5 backdrop-blur-lg text-white max-w-md mx-auto border border-white/10">
+        <CardHeader className="space-y-1 text-white">
+          <CardTitle className="text-2xl text-white font-bold text-center">Create an account</CardTitle>
+          <CardDescription className="text-center text-white">
             Enter your information to create an account
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 text-white">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input
-                id="name"
-                placeholder="John Doe"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
+  id="name"
+  placeholder="John Doe"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+  required
+  className="text-white placeholder:text-white"
+
+/>
+
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
@@ -107,31 +110,37 @@ export default function SignupPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="text-white placeholder:text-white"
+
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+            <Label htmlFor="password">Password</Label>
+  <Input
+    className="text-white placeholder:text-white placeholder:opacity-100"
+    id="password"
+    type="password"
+    placeholder="Enter your password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    required
+  />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
-              <Input
-                id="confirmPassword"
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
+            <Label htmlFor="confirmPassword">Confirm Password</Label>
+  <Input
+    id="confirmPassword"
+    type="password"
+    placeholder="Confirm your password"
+    value={confirmPassword}
+    onChange={(e) => setConfirmPassword(e.target.value)}
+    required
+    className="text-white placeholder:text-white placeholder:opacity-100"
+  />
             </div>
           </CardContent>
-          <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full" disabled={isLoading}>
+          <CardFooter className="flex flex-col space-y-4 text-white">
+            <Button type="submit" className="w-full mt-5 text-white" disabled={isLoading}>
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -141,7 +150,7 @@ export default function SignupPage() {
                 "Sign Up"
               )}
             </Button>
-            <div className="text-center text-sm">
+            <div className="text-center text-sm text-white">
               Already have an account?{" "}
               <Link
                 to="/login"
