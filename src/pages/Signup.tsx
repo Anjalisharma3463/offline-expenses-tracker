@@ -82,12 +82,12 @@ export default function SignupPage() {
       <Card className="w-full bg-white/5 backdrop-blur-lg text-white max-w-md mx-auto border border-white/10">
         <CardHeader className="space-y-1 text-white">
           <CardTitle className="text-2xl text-white font-bold text-center">Create an account</CardTitle>
-          <CardDescription className="text-center text-white">
+          <CardDescription className="text-center  ">
             Enter your information to create an account
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4 text-white">
+          <CardContent className="space-y-4 ">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input
@@ -96,7 +96,7 @@ export default function SignupPage() {
   value={name}
   onChange={(e) => setName(e.target.value)}
   required
-  className="text-white placeholder:text-white"
+ 
 
 />
 
@@ -110,15 +110,14 @@ export default function SignupPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="text-white placeholder:text-white"
+              
 
               />
             </div>
             <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
   <Input
-    className="text-white placeholder:text-white placeholder:opacity-100"
-    id="password"
+     id="password"
     type="password"
     placeholder="Enter your password"
     value={password}
@@ -135,8 +134,7 @@ export default function SignupPage() {
     value={confirmPassword}
     onChange={(e) => setConfirmPassword(e.target.value)}
     required
-    className="text-white placeholder:text-white placeholder:opacity-100"
-  />
+   />
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4 text-white">
