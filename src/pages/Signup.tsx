@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useToast } from "./hooks/use-toast"; // Keep same hook if compatible
+import { useToast } from "../hooks/use-toast"; // Keep same hook if compatible
 
 // UI Components
-import { Button } from "./components/ui/button";
-import { Input } from "./components/ui/input";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./components/ui/card";
-import { Label } from "./components/ui/label";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
+import { Label } from "../components/ui/label";
 import { Loader2 } from "lucide-react";
 
 export default function SignupPage() {
