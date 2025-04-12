@@ -82,7 +82,7 @@ export default function SignupPage() {
       <Card className="w-full bg-white/5 backdrop-blur-lg text-white max-w-md mx-auto border border-white/10">
         <CardHeader className="space-y-1 text-white">
           <CardTitle className="text-2xl text-white font-bold text-center">Create an account</CardTitle>
-          <CardDescription className="text-center  ">
+          <CardDescription className="text-center   ">
             Enter your information to create an account
           </CardDescription>
         </CardHeader>
