@@ -65,7 +65,7 @@ const handleFilterChange = (value: string): void => {
   const totalAmount = expenses.reduce((sum, expense) => sum + expense.amount, 0);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 text-white">
       <div className="flex flex-col sm:flex-row gap-4 justify-between">
         <div className="flex-1 relative">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -89,8 +89,9 @@ const handleFilterChange = (value: string): void => {
               ))}
             </SelectContent>
           </Select>
-          <div className="flex gap-2">
+          <div className="flex gap-2  ">
             <Button
+            
               variant={viewMode === "table" ? "default" : "outline"}
               size="icon"
               onClick={() => setViewMode("table")}
@@ -118,7 +119,7 @@ const handleFilterChange = (value: string): void => {
               onClick={() => setViewMode("cards")}
               className="h-10 w-10"
             >
-              <span className="sr-only">Card view</span>
+              <span className="sr-only ">Card view</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -147,25 +148,24 @@ const handleFilterChange = (value: string): void => {
         </div>
       ) : (
         <>
-          <div className="bg-muted/30 p-4 rounded-lg mb-4">
-            <p className="font-medium">
+          <div className=" bg-[#030712] p-4 rounded-lg mb-4   ">
+            <p className="font-medium ">
               Total: <span className="font-bold">${totalAmount.toFixed(2)}</span>
             </p>
             <p className="text-sm text-muted-foreground">
               Showing {expenses.length} expense{expenses.length !== 1 ? "s" : ""}
             </p>
           </div>
-
-          {viewMode === "table" ? (
-            <div className="rounded-md border">
+           {viewMode === "table" ? (
+            <div className="rounded-md border text-white">
               <Table>
                 <TableHeader>
-                  <TableRow>
-                    <TableHead>Title</TableHead>
-                    <TableHead>Category</TableHead>
-                    <TableHead>Date</TableHead>
-                    <TableHead className="text-right">Amount</TableHead>
-                    <TableHead className="text-right">Actions</TableHead>
+                  <TableRow className="bg-[#030712]">
+                    <TableHead className="text-white" >Title</TableHead>
+                    <TableHead className="text-white">Category</TableHead>
+                    <TableHead className="text-white">Date</TableHead>
+                    <TableHead className="text-right text-white">Amount</TableHead>
+                    <TableHead className="text-right text-white">Actions</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -227,8 +227,8 @@ const handleFilterChange = (value: string): void => {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Card>
-                      <CardContent className="p-4">
+                    <Card className=" bg-[#030712] text-white">
+                      <CardContent className="p-4 ">
                         <div className="flex justify-between items-center">
                           <div>
                             <p className="font-medium">{expense.title}</p>

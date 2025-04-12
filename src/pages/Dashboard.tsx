@@ -163,9 +163,9 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen text-white bg-gradient-to-br from-[#0f172b] via-[#1e2939] to-[#030712] flex flex-col">
       <Navbar />
-      <main className="flex-1 container max-w-6xl mx-auto p-4 md:p-6">
+      <main className="flex-1  container max-w-6xl mx-auto p-4 md:p-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold">Welcome, {user?.name}</h1>

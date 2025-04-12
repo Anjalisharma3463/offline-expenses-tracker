@@ -108,7 +108,7 @@ export function ExpenseForm({ onSubmit, onCancel, initialData }: ExpenseFormProp
           <CardTitle>{initialData ? "Edit Expense" : "Add New Expense"}</CardTitle>
         </CardHeader>
         <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 ">
             {/* Title */}
             <div className="space-y-2">
               <Label htmlFor="title">Title</Label>

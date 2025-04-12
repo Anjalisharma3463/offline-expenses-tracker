@@ -17,7 +17,7 @@ export function SyncStatus({ isOffline, syncStatus, pendingCount, onToggle }: Sy
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="flex items-center gap-2 border rounded-md px-3 py-1.5">
+            <div className="flex bg-[#1d293d] items-center gap-2 border rounded-md px-3 py-1.5">
               <div className="flex items-center gap-2">
                 {isOffline ? (
                   <WifiOff className="h-4 w-4 text-muted-foreground" />
